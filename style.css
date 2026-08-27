@@ -1,0 +1,755 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #030506;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* =========================
+   MAIN WEBSITE
+========================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    display: grid;
+    grid-template-columns: 42% 58%;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #071113 0%,
+            #030506 70%
+        );
+}
+
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+.cyan-glow,
+.yellow-glow {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.cyan-glow {
+    width: 40vw;
+    height: 40vw;
+
+    left: -20vw;
+    top: 20%;
+
+    background: #38c5cf;
+
+    filter: blur(120px);
+    opacity: 0.16;
+}
+
+.yellow-glow {
+    width: 40vw;
+    height: 40vw;
+
+    right: -20vw;
+    top: 15%;
+
+    background: #fff21a;
+
+    filter: blur(140px);
+    opacity: 0.12;
+}
+
+
+/* =========================
+   BACKGROUND DOTS
+========================= */
+
+.particles {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.18;
+
+    background-image:
+        radial-gradient(
+            #38c5cf 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+
+    mask-image:
+        linear-gradient(
+            90deg,
+            black 0%,
+            transparent 55%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   LEFT SIDE CONTENT
+========================= */
+
+.content {
+    position: relative;
+    z-index: 10;
+
+    height: 100dvh;
+
+    padding:
+        clamp(25px, 4vw, 70px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: clamp(18px, 3vh, 35px);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-box {
+    width: clamp(100px, 11vw, 180px);
+    flex-shrink: 0;
+}
+
+.logo-box img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-height: 22vh;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 15px rgba(56, 197, 207, 0.15));
+}
+
+
+/* =========================
+   COMING SOON
+========================= */
+
+.coming {
+    flex-shrink: 0;
+}
+
+.coming h1 {
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(65px, 8vw, 145px);
+
+    line-height: 0.78;
+
+    letter-spacing: 2px;
+
+    display: flex;
+    flex-direction: column;
+
+    color: #f5f5f5;
+}
+
+.coming h1 span {
+    color: #fff21a;
+
+    text-shadow:
+        0 0 20px rgba(255, 242, 26, 0.25),
+        0 0 50px rgba(255, 242, 26, 0.12);
+}
+
+
+/* =========================
+   LINE
+========================= */
+
+.line {
+    width: min(95%, 430px);
+
+    height: 2px;
+
+    margin: clamp(18px, 2.5vh, 28px) 0
+            clamp(14px, 2vh, 22px);
+
+    background:
+        linear-gradient(
+            90deg,
+            #38c5cf,
+            #ffffff,
+            #fff21a
+        );
+
+    box-shadow:
+        0 0 10px rgba(56, 197, 207, 0.4),
+        0 0 10px rgba(255, 242, 26, 0.3);
+}
+
+
+/* =========================
+   TAGLINE
+========================= */
+
+.tagline {
+    font-size: clamp(9px, 0.9vw, 15px);
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    line-height: 1.5;
+
+    display: flex;
+    gap: 8px;
+
+    flex-wrap: wrap;
+}
+
+.tagline span:first-child {
+    color: #38c5cf;
+}
+
+.tagline span:last-child {
+    color: #fff21a;
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.location {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 5px;
+
+    font-size: clamp(9px, 0.8vw, 13px);
+
+    font-weight: 600;
+
+    letter-spacing: 6px;
+
+    color: #f5f5f5;
+
+    flex-shrink: 0;
+}
+
+.pin {
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff21a;
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 12px #fff21a;
+}
+
+.location-line {
+    width: clamp(50px, 7vw, 100px);
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff21a,
+            transparent
+        );
+}
+
+
+/* =========================
+   RIGHT STAGE
+========================= */
+
+.stage {
+    position: relative;
+
+    height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   LED WALL
+========================= */
+
+.led-wall {
+    position: relative;
+
+    width: min(78%, 850px);
+
+    aspect-ratio: 16 / 9;
+
+    border: clamp(4px, 0.5vw, 8px) solid #071113;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #38c5cf 0%,
+            #4ed5d9 25%,
+            #d9e98a 50%,
+            #fff21a 72%,
+            #ffe600 100%
+        );
+
+    box-shadow:
+        0 0 15px rgba(56, 197, 207, 0.45),
+        0 0 45px rgba(56, 197, 207, 0.18),
+        0 0 60px rgba(255, 242, 26, 0.18),
+        0 30px 70px rgba(0, 0, 0, 0.8);
+}
+
+
+/* LED PIXELS */
+
+.led-wall::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            rgba(255, 255, 255, 0.85) 1.4px,
+            transparent 2px
+        );
+
+    background-size: clamp(7px, 0.7vw, 11px)
+                     clamp(7px, 0.7vw, 11px);
+
+    opacity: 0.75;
+}
+
+.led-wall::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent,
+            rgba(0, 0, 0, 0.18)
+        );
+}
+
+
+/* =========================
+   LED TEXT
+========================= */
+
+.led-content {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(35px, 5vw, 105px);
+
+    letter-spacing: 8px;
+
+    color: rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================
+   TRUSS
+========================= */
+
+.truss {
+    position: absolute;
+
+    z-index: 5;
+
+    opacity: 0.55;
+
+    pointer-events: none;
+}
+
+.top-truss {
+    width: 84%;
+    height: 14px;
+
+    top: 17%;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 16px,
+            #38c5cf 17px,
+            transparent 19px
+        );
+}
+
+.left-truss,
+.right-truss {
+    width: 14px;
+    height: 64%;
+
+    top: 18%;
+}
+
+.left-truss {
+    left: 8%;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 16px,
+            #38c5cf 17px,
+            transparent 19px
+        );
+}
+
+.right-truss {
+    right: 8%;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            transparent 0,
+            transparent 16px,
+            #fff21a 17px,
+            transparent 19px
+        );
+}
+
+
+/* =========================
+   STAGE LIGHTS
+========================= */
+
+.light {
+    position: absolute;
+
+    width: clamp(100px, 12vw, 180px);
+    height: 45vh;
+
+    top: 4%;
+
+    opacity: 0.15;
+
+    filter: blur(14px);
+
+    transform-origin: top;
+
+    clip-path:
+        polygon(
+            45% 0,
+            55% 0,
+            100% 100%,
+            0 100%
+        );
+
+    pointer-events: none;
+}
+
+.light1 {
+    left: 20%;
+    background: #38c5cf;
+    transform: rotate(-18deg);
+}
+
+.light2 {
+    left: 37%;
+    background: #38c5cf;
+    transform: rotate(10deg);
+}
+
+.light3 {
+    right: 30%;
+    background: #fff21a;
+    transform: rotate(-10deg);
+}
+
+.light4 {
+    right: 15%;
+    background: #fff21a;
+    transform: rotate(18deg);
+}
+
+
+/* =========================
+   FLOOR
+========================= */
+
+.floor {
+    position: absolute;
+
+    bottom: -5%;
+
+    width: 100%;
+    height: 30%;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(56, 197, 207, 0.12),
+            transparent 70%
+        );
+
+    transform:
+        perspective(500px)
+        rotateX(65deg);
+
+    opacity: 0.5;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) and (min-width: 769px) {
+
+    .hero {
+        grid-template-columns: 45% 55%;
+    }
+
+    .content {
+        padding: 35px;
+    }
+
+    .coming h1 {
+        font-size: clamp(65px, 9vw, 100px);
+    }
+
+    .tagline {
+        font-size: 9px;
+    }
+
+    .location {
+        font-size: 9px;
+        letter-spacing: 4px;
+    }
+}
+
+
+/* =========================
+   PHONE VIEW
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+
+        height: 100dvh;
+    }
+
+    .content {
+        width: 100%;
+        height: 58%;
+
+        padding: 20px;
+
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        gap: clamp(10px, 2vh, 20px);
+    }
+
+    .logo-box {
+        width: clamp(80px, 27vw, 125px);
+    }
+
+    .logo-box img {
+        max-height: 17vh;
+    }
+
+    .coming h1 {
+        font-size: clamp(65px, 20vw, 110px);
+
+        align-items: center;
+
+        line-height: 0.8;
+    }
+
+    .line {
+        width: 75%;
+
+        margin: 15px auto;
+    }
+
+    .tagline {
+        justify-content: center;
+
+        font-size: clamp(8px, 2.4vw, 11px);
+
+        letter-spacing: 1.5px;
+
+        flex-direction: column;
+
+        gap: 2px;
+    }
+
+    .location {
+        justify-content: center;
+
+        font-size: 9px;
+
+        letter-spacing: 4px;
+    }
+
+    .location-line {
+        display: none;
+    }
+
+    .stage {
+        width: 100%;
+        height: 42%;
+    }
+
+    .led-wall {
+        width: 76%;
+
+        border-width: 4px;
+    }
+
+    .led-content {
+        font-size: 38px;
+        letter-spacing: 4px;
+    }
+
+    .top-truss {
+        top: 8%;
+    }
+
+    .left-truss,
+    .right-truss {
+        top: 8%;
+        height: 78%;
+    }
+
+    .left-truss {
+        left: 8%;
+    }
+
+    .right-truss {
+        right: 8%;
+    }
+
+    .light {
+        height: 250px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .content {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .logo-box {
+        width: 80px;
+    }
+
+    .coming h1 {
+        font-size: 62px;
+    }
+
+    .line {
+        margin: 12px auto;
+    }
+
+    .tagline {
+        font-size: 7px;
+    }
+
+    .location {
+        font-size: 8px;
+    }
+}
+
+
+/* =========================
+   SHORT LAPTOP SCREENS
+========================= */
+
+@media (max-height: 700px) and (min-width: 769px) {
+
+    .content {
+        gap: 18px;
+    }
+
+    .logo-box {
+        width: 110px;
+    }
+
+    .coming h1 {
+        font-size: clamp(65px, 8vw, 115px);
+    }
+
+    .line {
+        margin: 18px 0;
+    }
+
+    .stage {
+        transform: scale(0.92);
+    }
+}
